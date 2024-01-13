@@ -1,0 +1,93 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AFejes_Capstone.CoursesPage">
+
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout>
+            <Frame Padding="10">
+                <Label x:Name="HeaderLabel" 
+                       Text="Courses for [Term Name]"
+                       VerticalOptions="Start" 
+                       HorizontalOptions="CenterAndExpand" 
+                       FontSize="Large"/>
+            </Frame>
+
+            <!-- Courses List -->
+            <CollectionView x:Name="CoursesList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <!-- Course Details -->
+                            <Frame Padding="10" BackgroundColor="DarkSlateBlue">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="Course Name:" Grid.Row="0" Grid.Column="0" class="course"/>
+                                    <Label Text="{Binding CourseName}" Grid.Row="0" Grid.Column="1" class="course"/>
+
+                                    <Label Text="Start Date:" Grid.Row="1" Grid.Column="0" class="course"/>
+                                    <Label Text="{Binding StartDate}" Grid.Row="1" Grid.Column="1" class="course"/>
+
+                                    <Label Text="End Date:" Grid.Row="2" Grid.Column="0" class="course"/>
+                                    <Label Text="{Binding AnticipatedEndDate}" Grid.Row="2" Grid.Column="1" class="course"/>
+
+                                    <Label Text="Due Date:" Grid.Row="3" Grid.Column="0" class="course"/>
+                                    <Label Text="{Binding DueDate}" Grid.Row="3" Grid.Column="1" class="course"/>
+
+                                    <Label Text="Status:" Grid.Row="4" Grid.Column="0" class="course"/>
+                                    <Label Text="{Binding CourseStatus}" Grid.Row="4" Grid.Column="1" class="course"/>
+
+                                    <Label Text="Instructor:" Grid.Row="5" Grid.Column="0" class="course"/>
+                                    <Label Text="{Binding InstructorName}" Grid.Row="5" Grid.Column="1" class="course"/>
+
+                                    <Label Text="Email:" Grid.Row="6" Grid.Column="0" class="course"/>
+                                    <Label Text="{Binding InstructorEmail}" Grid.Row="6" Grid.Column="1" class="course"/>
+
+                                    <Label Text="Phone:" Grid.Row="7" Grid.Column="0" class="course"/>
+                                    <Label Text="{Binding InstructorPhone}" Grid.Row="7" Grid.Column="1" class="course"/>
+
+                                </Grid>
+                            </Frame>
+
+                            <Grid HorizontalOptions="CenterAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Button Text="✎ Edit Course" 
+                                        Clicked="OnEditCourseClicked" 
+                                        Margin="10"
+                                        Padding="10"
+                                        Grid.Column="0"/>
+                                <Button Text="🗑️ Delete Course" 
+                                        Clicked="OnDeleteCourseClicked" 
+                                        Margin="10"
+                                        Padding="10"
+                                        Grid.Column="1"/>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Add Course" 
+                    Margin="10"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center"
+                    Clicked="OnAddCourseClicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

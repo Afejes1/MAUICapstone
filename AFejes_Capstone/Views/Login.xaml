@@ -1,0 +1,17 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AFejes_Capstone.LoginPage"
+             >
+
+    <StackLayout Padding="30" Spacing="20">
+        <Label Text="Login" HorizontalOptions="Center" FontSize="32" />
+
+        <Entry x:Name="UsernameEntry" Placeholder="Username" />
+        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
+
+        <Button Text="Login" Clicked="OnLoginClicked" />
+        <Button Text="New User" Clicked="OnNewUserClicked" />
+
+        <Label x:Name="ErrorLabel" TextColor="Red" />
+    </StackLayout>
+</ContentPage>

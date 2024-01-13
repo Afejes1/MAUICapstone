@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AFejes_Capstone.Reports"
+             Title="Reports">
+
+    <VerticalStackLayout>
+
+        <!-- Button to Generate PDF -->
+        <Button Text="Generate PDF" 
+                HorizontalOptions="Center" 
+                VerticalOptions="End" 
+                Clicked="OnGeneratePdfClicked"
+                Margin="10"/>
+        <!-- Header Grid for Assessments -->
+        <Grid Margin="10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="ID" Grid.Column="0" FontAttributes="Bold" />
+            <Label Text="Assessment Name" Grid.Column="1" FontAttributes="Bold" />
+            <Label Text="Type" Grid.Column="2" FontAttributes="Bold" />
+            <Label Text="Start Date" Grid.Column="3" FontAttributes="Bold" />
+            <Label Text="End Date" Grid.Column="4" FontAttributes="Bold" />
+            <!--<Label Text="Notify Start Date" Grid.Column="5" FontAttributes="Bold" />
+            <Label Text="Notify End Date" Grid.Column="6" FontAttributes="Bold" />-->
+        </Grid>
+
+        <!-- CollectionView to display Assessment data -->
+        <CollectionView x:Name="dataCollectionView" Margin="10,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                            <!--<ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />-->
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding Id}" Grid.Column="0" />
+                        <Label Text="{Binding AssessmentName}" Grid.Column="1" />
+                        <Label Text="{Binding Type}" Grid.Column="2" />
+                        <Label Text="{Binding StartDate}" Grid.Column="3" />
+                        <Label Text="{Binding EndDate}" Grid.Column="4" />
+                        <!--<Label Text="{Binding NotifyStartDate}" Grid.Column="5" />
+                        <Label Text="{Binding NotifyEndDate}" Grid.Column="6" />-->
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+    </VerticalStackLayout>
+</ContentPage>

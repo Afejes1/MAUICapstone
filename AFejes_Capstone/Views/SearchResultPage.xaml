@@ -1,0 +1,83 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AFejes_Capstone.SearchResultsPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- Title, Search Type, SearchBar, Status Label, and CollectionView -->
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Search Results Label -->
+        <Label Text="Search Results"
+               VerticalOptions="Start" 
+               HorizontalOptions="CenterAndExpand" 
+               FontSize="Large"
+               Grid.Row="0"/>
+
+        <!-- Search Type Label and Picker -->
+        <!--<Label Text="Search Type:"
+               VerticalOptions="Start" 
+               HorizontalOptions="Start" 
+               FontSize="Medium"
+               Grid.Row="1" Grid.Column="0"/>-->
+        <Picker x:Name="searchTypePicker" Title="Select Search Type"
+               Grid.Row="1" Grid.Column="1">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Terms</x:String>
+                    <x:String>Courses</x:String>
+                    <x:String>Assessments</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Search Bar -->
+        <SearchBar x:Name="searchBar" 
+                   Placeholder="Search" 
+                   SearchButtonPressed="OnSearchButtonPressed"
+                   Grid.Row="2" Grid.ColumnSpan="2"/>
+
+        <!-- Status Label -->
+        <Label x:Name="searchStatusLabel" Text="" 
+               HorizontalOptions="CenterAndExpand" 
+               FontAttributes="Bold"
+               Grid.Row="3" Grid.ColumnSpan="2"/>
+
+        <!-- CollectionView -->
+        <CollectionView x:Name="SearchResultsList" Grid.Row="4" Grid.ColumnSpan="2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Name Label -->
+                        <Label Text="{Binding Name}" 
+                               FontAttributes="Bold" 
+                               FontSize="Medium"
+                               Grid.Row="0" Grid.Column="1"/>
+                        <!-- Start Date Label -->
+                        <Label Text="{Binding StartDate}" 
+                               FontSize="Small"
+                               Grid.Row="1" Grid.Column="1"/>
+                        <!-- End Date Label -->
+                        <Label Text="{Binding EndDate}" 
+                               FontSize="Small"
+                               Grid.Row="2" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

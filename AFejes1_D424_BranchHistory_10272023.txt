@@ -1,0 +1,102 @@
+commit 09df1daf6febf2b04c1d84f77dec1ca338446892
+Merge: 493f93b 2f2b28b
+Author: Aron.Fejes <FejesAE@ornl.gov>
+Date:   Fri Oct 27 16:17:34 2023 -0400
+
+    Merge branch 'master' of https://gitlab.com/wgu-gitlab-environment/student-repos/afejes21/d424-software-engineering-capstone
+
+commit 493f93b2090ea656bf400efcf03c4658011ab592
+Author: Aron.Fejes <FejesAE@ornl.gov>
+Date:   Fri Oct 27 16:17:21 2023 -0400
+
+    C. Created documentation to meet section C requirements
+
+commit 2f2b28b84fd4b0fc56c828b38aa6773079f869e1
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Fri Oct 27 15:50:39 2023 -0400
+
+    D. Updated unit test verbosity.
+
+commit f466a9ceb508d804e46557a25a68207a38bbc07d
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Fri Oct 27 11:26:42 2023 -0400
+
+    D. Added unit tests for report generation
+
+commit f31afa8107438574794e6a6c6bcfed246a901a35
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Fri Oct 27 10:55:31 2023 -0400
+
+    D. Added test project and unit tests
+
+commit d888cd1b07741f82588378412d44e72e016ece08
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Thu Oct 26 13:33:43 2023 -0400
+
+    Fixed some styling
+
+commit b8f6a68cecf06a8479184a1806b48859fdfeb9e7
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Thu Oct 26 13:12:48 2023 -0400
+
+    B. Added Shell navigation and session state. Fixed various issues.
+
+commit 8cd1912b351888889ddd09fbd4f97bb44f2bf7ca
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Wed Oct 25 16:01:26 2023 -0400
+
+    B. Added Download Folder path support
+
+commit ee1dacf6bcf12c61541a4084b6a8a6fe9c7a5c12
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Wed Oct 25 15:42:06 2023 -0400
+
+    B. Added an in-app Report screen and a Save to PDF button. Working on an Interface to save the file to the Downloads folder.
+
+commit 67f56084eb64a4b3db8ae8d369dc67e88fcc81a3
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Tue Oct 24 14:31:05 2023 -0400
+
+    B. Fixed title and smoke tested on Android and Windows
+
+commit 901aed211fd3d08d7fd814f2f64e92f14e3caea1
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Tue Oct 24 13:31:02 2023 -0400
+
+    B. Removed Database Encryption and fixed navigation.
+
+commit 9e4c2615fc8784a7f55c82f681b016442336186f
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Tue Oct 24 12:04:38 2023 -0400
+
+    B. Added Per User database support
+
+commit 75fbb409830407cdf2333505f115d81a32d9d7ec
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Mon Oct 23 16:02:42 2023 -0400
+
+    B. Adding Login page with encryption
+
+commit 830ed6fa2de7214be23fef4a699f2f895cc02569
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Mon Oct 23 15:31:07 2023 -0400
+
+    B.4 - "PDF Report Generation"
+
+commit baee81d96a6fc1238bf6586763b91d96dde71def
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Sun Oct 22 16:14:20 2023 -0400
+
+    AFejes_Capstone - B. Initial Commit with functional application.
+
+commit f795d4ed2be600e892640cbaa395bfec5718b04b
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Sun Oct 22 16:04:22 2023 -0400
+
+    Add project files.
+
+commit 24cfb6a313648290aaec7e4539d1f573b12ab688
+Author: AFejes2 <AronFejes@gmail.com>
+Date:   Sun Oct 22 16:04:20 2023 -0400
+
+    Add .gitattributes and .gitignore.

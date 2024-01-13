@@ -1,0 +1,164 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AFejes_Capstone.CourseFormPage">
+
+    <!-- Add ScrollView for vertical scrolling -->
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout Spacing="20">
+            <Frame Padding="15"
+               CornerRadius="5">
+                <Label x:Name="PageTitleLabel" 
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand" 
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+            </Frame>
+
+            <Entry x:Name="CourseNameEntry" 
+               Placeholder="Course Name"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Start Date:" Grid.Row="0" Grid.Column="0"/>
+                <DatePicker x:Name="StartDatePicker" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Start Date Notification" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2"/>
+                <Switch x:Name="NotifyStartDateSwitch" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"/>
+
+
+                <Label Text="End Date: " Grid.Row="1" Grid.Column="0"/>
+                <DatePicker x:Name="EndDatePicker" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="End Date Notification" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2"/>
+                <Switch x:Name="NotifyEndDateSwitch" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2"/>
+
+                <Label Text="Due Date" Grid.Row="2" Grid.Column="0"/>
+                <DatePicker x:Name="DueDatePicker" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+            </Grid>
+
+            <Picker x:Name="StatusPicker" 
+                Title="Course Status"
+                Style="{StaticResource PickerStyle}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                        <x:String>Planned</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <Entry x:Name="InstructorNameEntry" 
+                   Placeholder="Instructor Name"
+                   Style="{StaticResource EntryStyle}"/>
+
+            <Entry x:Name="InstructorEmailEntry" 
+                   Placeholder="Instructor Email"
+                   Style="{StaticResource EntryStyle}"/>
+
+            <Entry x:Name="InstructorPhoneEntry" 
+                   Placeholder="Instructor Phone"
+                   Style="{StaticResource EntryStyle}"/>
+
+            <Editor x:Name="NotesEditor"
+                    Placeholder="Notes"
+                    Style="{StaticResource EditorStyle}"
+                    AutoSize="TextChanges"/>
+
+            <Button Text="Share Notes" 
+                    Clicked="OnShareNotesClicked"/>
+
+            <!-- Assessments Section -->
+            <Frame Padding="15"
+                   CornerRadius="5">
+                <Label Text="Assessments"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand" 
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+            </Frame>
+
+            <CollectionView x:Name="AssessmentsList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+
+
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Assessment Details -->
+                                <Label Text="Name:" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding AssessmentName}" Grid.Row="0" Grid.Column="1"/>
+
+                                <Label Text="Type:" Grid.Row="1" Grid.Column="0"/>
+                                <Label Text="{Binding Type}" Grid.Row="1" Grid.Column="1"/>
+
+                                <Label Text="Start Date:" Grid.Row="2" Grid.Column="0"/>
+                                <Label Text="{Binding StartDate}" Grid.Row="2" Grid.Column="1"/>
+
+                                <Label Text="Notify Start Date" Grid.Row="3" Grid.Column="2"/>
+                                <Switch IsToggled="{Binding NotifyStartDate}" Grid.Row="3" Grid.Column="3" IsEnabled="False"/>
+
+                                <Label Text="End Date:" Grid.Row="4" Grid.Column="0"/>
+                                <Label Text="{Binding EndDate}" Grid.Row="4" Grid.Column="1"/>
+
+                                <Label Text="Notify End Date" Grid.Row="4" Grid.Column="2"/>
+                                <Switch IsToggled="{Binding NotifyEndDate}" Grid.Row="4" Grid.Column="3" IsEnabled="False"/>
+
+                                <Button Text="✎ Edit Assessment" Clicked="OnEditAssessmentClicked" Grid.Row =" 5" Grid.Column="0" Grid.ColumnSpan="2"/>
+                                <Button Text="🗑️ Delete Assessment" Clicked="OnDeleteAssessmentClicked" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2"/>
+                            </Grid>
+
+                            <!-- Assessment Buttons -->
+                            <Grid HorizontalOptions="CenterAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Add Assessment Button -->
+            <Button Text="Add Assessment" 
+                    Clicked="OnAddAssessmentClicked"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center"/>
+
+            <!-- Save Button -->
+            <Button Text="Save" 
+                    Clicked="OnSaveClicked"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

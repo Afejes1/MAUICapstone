@@ -1,0 +1,46 @@
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:AFejes_Capstone"
+       x:Class="AFejes_Capstone.AppShell"
+       FlyoutBehavior="{Binding FlyoutBehavior}">
+    <!-- Set the starting route -->
+
+
+
+    <Shell.TitleView>
+        <Label Text="WGU: SAM (Simplified Academic Management)" class="Title"/>
+    </Shell.TitleView>
+
+    <!-- For MainPage -->
+    <ShellContent Route="MainPage" IsVisible="True" Title="Home">
+        <local:MainPage />
+    </ShellContent>
+    <!-- For Reports -->
+    <ShellContent Route="Reports" IsVisible="True" Title="Reports">
+        <local:Reports />
+    </ShellContent>
+
+
+
+    <!-- For Search -->
+    <ShellContent Route="Search" IsVisible="True" Title="Search">
+        <local:SearchResultsPage />
+    </ShellContent>
+
+
+
+
+    <!--For LoginPage-->
+    <ShellContent Route="LoginPage" IsVisible="True" Title="Logout" >
+        <local:LoginPage />
+    </ShellContent>
+
+    <!--<ShellContent Route="TermFormPage" ContentTemplate="{DataTemplate local:TermFormPage}" />
+    <ShellContent Route="CourseDetailsPage" ContentTemplate="{DataTemplate local:CourseDetailsPage}" />-->
+    <!--<ShellContent Route="Reports" ContentTemplate="{DataTemplate local:Reports}"/>-->
+    
+    <!-- Logout Menu Item -->
+    <!--<MenuItem Text="Logout" Clicked="OnLogoutClicked" />-->
+
+
+</Shell>

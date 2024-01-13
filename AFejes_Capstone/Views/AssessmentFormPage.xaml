@@ -1,0 +1,79 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AFejes_Capstone.AssessmentFormPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <!-- Title -->
+        <Label Text="Add/Edit Assessment"
+               VerticalOptions="Start" 
+               HorizontalOptions="CenterAndExpand" 
+               FontSize="Large"
+               Grid.Row="0" Grid.ColumnSpan="3"/>
+
+        <!-- Assessment Name -->
+        <Label Text="Assessment Name" 
+               Grid.Row="1" Grid.Column="0"/>
+        <Entry x:Name="AssessmentNameEntry" 
+               Placeholder="Assessment Name" 
+               Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+               Margin="0,0,0,10"/>
+
+        <!-- Assessment Type -->
+        <Label Text="Assessment Type" 
+               Grid.Row="2" Grid.Column="0"/>
+        <Picker x:Name="TypePicker" 
+                Title="" 
+                Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Objective</x:String>
+                    <x:String>Performance</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Start Date and Notify Start Date -->
+        <Label Text="Start Date" 
+               Grid.Row="3" Grid.Column="0"/>
+        <DatePicker x:Name="StartDatePicker" 
+                    Grid.Row="3" Grid.Column="1"/>
+        <Label Text="Notify Start Date" 
+               Grid.Row="3" Grid.Column="2"/>
+        <Switch x:Name="NotifyStartDateSwitch" 
+                Grid.Row="3" Grid.Column="3"/>
+
+        <!-- End Date and Notify End Date -->
+        <Label Text="End Date" 
+               Grid.Row="4" Grid.Column="0"/>
+        <DatePicker x:Name="EndDatePicker" 
+                    Grid.Row="4" Grid.Column="1"/>
+        <Label Text="Notify End Date" 
+               Grid.Row="4" Grid.Column="2"/>
+        <Switch x:Name="NotifyEndDateSwitch" 
+                Grid.Row="4" Grid.Column="3"/>
+
+        <!-- Save Button -->
+        <Button Text="Save" 
+                Margin="10"
+                Padding="10"
+                Clicked="OnSaveClicked" 
+                Grid.Row="5" Grid.ColumnSpan="4"/>
+    </Grid>
+</ContentPage>
